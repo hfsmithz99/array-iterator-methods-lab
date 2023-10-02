@@ -49,7 +49,9 @@ const inventors = [
   // Array.prototype.reduce()
   // 5. How many years did all the inventors live?
   const sumOfYearsDied = inventors.reduce((acc, inventors)=> acc + inventors.passed, 0);
+  
   const sumOfYearsBorn = inventors.reduce((acc, inventors)=> acc + inventors.year, 0);
+  
   console.log(sumOfYearsDied-sumOfYearsBorn);
   
   
@@ -85,13 +87,15 @@ const inventors = [
   // Array.prototype.reduce()
   // 7. Count the number of instances for each of the data items. The reduce should return an object where the keys are 'car', 'truck', etc. and the values are the count.
   // Hint: Since you want to return an object, be sure to pass an empty {} for the initial value of the "accumulator".
-  
-  
-  
-  
-  
-  
-  
+  const dataInstance = data.reduce((acc, vehicle)=>{
+    if(acc[vehicle]){
+      acc[vehicle] += 1;
+    } else{
+      acc[vehicle] = 1;
+    }
+    return acc;
+  } ,{})
+  console.log(dataInstance);
   
   const devs = [
     { name: 'Wes', year: 1988 },
